@@ -8,12 +8,15 @@ export const AppContext = React.createContext({
 
 const AppProvider = ({ children }) => {
   const [navPage, setNavPage] = React.useState(APP_PAGES.APP.LOGIN);
+  const [errorMsg, setErrorMsg] = React.useState("");
 
   return (
     <AppContext.Provider
       value={{
         navPage,
         setNavPage,
+        errorMsg,
+        setErrorMsg,
       }}
     >
       {children}
