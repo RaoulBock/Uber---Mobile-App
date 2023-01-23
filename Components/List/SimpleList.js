@@ -1,10 +1,20 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { APP_ICON } from "../../Context/settings";
+import { APP_ICON, APP_PAGES } from "../../Context/settings";
+import { AppContext } from "../../Context/AppContext";
 
 const SimpleList = ({ item }) => {
+  const { setSpecLocation } = React.useContext(AppContext);
+
   return (
-    <TouchableOpacity style={styles.outline} activeOpacity={1}>
+    <TouchableOpacity
+      style={styles.outline}
+      activeOpacity={1}
+      onPress={() => {
+        setSpecLocation(item);
+        setNavPage(APP_PAGES.APP.SPEC);
+      }}
+    >
       <View style={styles.grid}>
         <Text style={styles.btn}>{item.icon}</Text>
         <View style={{ paddingHorizontal: 10 }}>

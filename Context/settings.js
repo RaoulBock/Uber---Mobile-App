@@ -3,6 +3,7 @@ export const APP_PAGES = {
     LOGIN: "LOGIN",
     VERIFY: "VERIFY",
     HOME: "HOME",
+    SPEC: "SPEC",
   },
 };
 
