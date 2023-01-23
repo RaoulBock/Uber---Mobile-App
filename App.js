@@ -1,5 +1,6 @@
 import React from "react";
 import { StatusBar } from "react-native";
+import HomeScreen from "./Components/Screens/HomeScreen";
 import LoginScreen from "./Components/Screens/LoginScreen";
 import VerifyScreen from "./Components/Screens/VerifyScreen";
 import AppProvider, { AppContext } from "./Context/AppContext";
@@ -35,6 +36,7 @@ const NavWrapper = () => {
 
       {navPage === APP_PAGES.APP.LOGIN && <LoginScreen />}
       {navPage === APP_PAGES.APP.VERIFY && <VerifyScreen />}
+      {navPage === APP_PAGES.APP.HOME && <HomeScreen />}
     </>
   );
 };

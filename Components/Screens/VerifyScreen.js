@@ -9,9 +9,10 @@ import {
 import React from "react";
 import Button from "../Button/Button";
 import { AppContext } from "../../Context/AppContext";
+import { APP_PAGES } from "../../Context/settings";
 
 const VerifyScreen = () => {
-  const { errorMsg, mobileNumber } = React.useContext(AppContext);
+  const { errorMsg, mobileNumber, setNavPage } = React.useContext(AppContext);
 
   const [input1, setInput1] = React.useState();
   const [input2, setInput2] = React.useState();
@@ -87,7 +88,10 @@ const VerifyScreen = () => {
       </View>
       {input4 && (
         <View style={{ marginVertical: 20 }}>
-          <Button title={"Next"} />
+          <Button
+            title={"Next"}
+            onPress={() => setNavPage(APP_PAGES.APP.HOME)}
+          />
         </View>
       )}
       <Text style={styles.error}>{errorMsg}</Text>

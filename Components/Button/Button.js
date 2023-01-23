@@ -13,14 +13,14 @@ export default Button;
 
 const styles = StyleSheet.create({
   btn: {
-    backgroundColor: "#eeeeee",
+    backgroundColor: "#3071f5",
     width: "100%",
     borderRadius: 10,
     paddingVertical: 15,
   },
   text: {
     textAlign: "center",
-    color: "#9f9f9f",
+    color: "#fff",
     fontWeight: "500",
     fontSize: 18,
   },
