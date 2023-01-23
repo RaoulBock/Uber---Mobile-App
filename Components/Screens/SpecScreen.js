@@ -9,7 +9,9 @@ import {
 import React from "react";
 import ViewMap from "../Views/ViewMap";
 import SpecList from "../List/SpecList";
-import { APP_ICON } from "../../Context/settings";
+import { APP_ICON, APP_PAGES } from "../../Context/settings";
+import Button from "../Button/Button";
+import { AppContext } from "../../Context/AppContext";
 
 const SpecScreen = () => {
   const driver = [
@@ -21,6 +23,8 @@ const SpecScreen = () => {
       img: "https://cdn3d.iconscout.com/3d/premium/thumb/gamers-5266580-4403854.png",
     },
   ];
+
+  const { setNavPage } = React.useContext(AppContext);
 
   return (
     <View style={styles.outline}>
@@ -36,6 +40,12 @@ const SpecScreen = () => {
             {driver.map((e, i) => {
               return <SpecList key={i} item={e} />;
             })}
+          </View>
+          <View style={{ marginVertical: 10 }}>
+            <Button
+              title={"Cancel"}
+              onPress={() => setNavPage(APP_PAGES.APP.HOME)}
+            />
           </View>
         </View>
       </View>

@@ -1,14 +1,21 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { APP_ICON } from "../../Context/settings";
+import { AppContext } from "../../Context/AppContext";
 
 const SpecList = ({ item }) => {
+  const { setSpecDriver } = React.useContext(AppContext);
   return (
     <View style={styles.outline}>
       <View style={[styles.grid, { justifyContent: "space-between" }]}>
         <Image source={{ uri: item.img }} style={styles.img} />
         <View style={styles.grid}>
-          <TouchableOpacity style={{ marginHorizontal: 20 }}>
+          <TouchableOpacity
+            style={{ marginHorizontal: 20 }}
+            onPress={() => {
+              setSpecDriver(item);
+            }}
+          >
             <Text>{APP_ICON.MESSAGE}</Text>
           </TouchableOpacity>
           <TouchableOpacity>

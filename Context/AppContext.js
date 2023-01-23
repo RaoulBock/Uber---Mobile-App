@@ -13,6 +13,7 @@ const AppProvider = ({ children }) => {
   const [mobileNumber, setMobileNumber] = React.useState("");
   const [location, setLocation] = React.useState(null);
   const [specLocation, setSpecLocation] = React.useState();
+  const [specDriver, setSpecDriver] = React.useState();
 
   React.useEffect(() => {
     (async () => {
@@ -49,6 +50,8 @@ const AppProvider = ({ children }) => {
         setLocation,
         specLocation,
         setSpecLocation,
+        specDriver,
+        setSpecDriver,
       }}
     >
       {children}
