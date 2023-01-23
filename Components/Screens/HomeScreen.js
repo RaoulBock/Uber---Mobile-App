@@ -10,8 +10,11 @@ import {
 import React from "react";
 import Nav from "../Nav/Nav";
 import { APP_ICON } from "../../Context/settings";
-import Model from "../Model/Model";
 import SearchInput from "../Input/SearchInput";
+
+import MapView, { Marker } from "react-native-maps";
+import ViewMap from "../Views/ViewMap";
+
 const HomeScreen = () => {
   //   const [toggleModel, setToggleModel] = React.useState(false);
 
@@ -21,13 +24,26 @@ const HomeScreen = () => {
     setIsVisible(!isVisible);
   };
 
+  const [mapRegion, setmapRegion] = React.useState({
+    latitude: 37.78825,
+    longitude: -122.4324,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  });
+
   return (
     <View style={styles.outline}>
-      <Nav
+      {/* <Nav
         icon1={APP_ICON.horizontal}
         title={"Uber"}
         onPress={() => setIsVisible(!isVisible)}
-      />
+      /> */}
+      <MapView
+        style={{ alignSelf: "stretch", height: "50%" }}
+        region={mapRegion}
+      >
+        <Marker coordinate={mapRegion} title="Marker" />
+      </MapView>
 
       <Modal
         animationType="slide"
@@ -54,7 +70,6 @@ const styles = StyleSheet.create({
   outline: {
     flex: 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    margin: 10,
   },
   overlay: {
     backgroundColor: "#404040",
