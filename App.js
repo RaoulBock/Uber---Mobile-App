@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StatusBar } from "react-native";
+import LoginScreen from "./Components/Screens/LoginScreen";
+import AppProvider, { AppContext } from "./Context/AppContext";
+import { APP_PAGES } from "./Context/settings";
 
-export default function App() {
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AppProvider>
+      <NavWrapper />
+    </AppProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const NavWrapper = () => {
+  const { navPage, setNavPage } = React.useContext(AppContext);
+  const onSetNavPage = (e) => {
+    setNavPage(e);
+  };
+
+  React.useEffect(() => {
+    console.log("App Nav: ", navPage);
+  }, [navPage]);
+
+  return (
+    <>
+      <StatusBar
+        style="dark"
+        barStyle={"dark-content"}
+        backgroundColor="#fff"
+        hidden={false}
+        translucent={true}
+      />
+
+      {navPage === APP_PAGES.APP.LOGIN && <LoginScreen />}
+    </>
+  );
+};
+
+export default App;
