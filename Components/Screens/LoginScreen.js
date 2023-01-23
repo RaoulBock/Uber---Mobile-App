@@ -10,15 +10,16 @@ import React from "react";
 import LoginNav from "../Nav/LoginNav";
 import Button from "../Button/Button";
 import { AppContext } from "../../Context/AppContext";
+import { APP_PAGES } from "../../Context/settings";
 
 const LoginScreen = () => {
-  const [number, setNumber] = React.useState("");
-  const { errorMsg, setErrorMsg } = React.useContext(AppContext);
+  const { errorMsg, setErrorMsg, setNavPage, setMobileNumber } =
+    React.useContext(AppContext);
+  const inputRef = React.useRef();
 
-  if (number === "") {
-    setErrorMsg("Please provide your mobile number to continue.");
-  } else {
-  }
+  React.useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   return (
     <View style={styles.outline}>
@@ -32,12 +33,17 @@ const LoginScreen = () => {
           placeholder={"81 495 3704"}
           focusable={true}
           keyboardType={"numeric"}
-          onChangeText={(e) => setNumber(e)}
+          onChangeText={(e) => setMobileNumber(e)}
+          ref={inputRef}
         />
       </View>
       <View style={{ marginVertical: 20 }}>
-        <Button title={"Next"} />
+        <Button
+          title={"Next"}
+          onPress={() => setNavPage(APP_PAGES.APP.VERIFY)}
+        />
       </View>
+      <Text style={styles.error}>{errorMsg}</Text>
     </View>
   );
 };
@@ -70,5 +76,11 @@ const styles = StyleSheet.create({
   },
   code: {
     fontSize: 28,
+  },
+  error: {
+    color: "red",
+    textAlign: "center",
+    marginVertical: 10,
+    fontWeight: "500",
   },
 });

@@ -9,6 +9,7 @@ export const AppContext = React.createContext({
 const AppProvider = ({ children }) => {
   const [navPage, setNavPage] = React.useState(APP_PAGES.APP.LOGIN);
   const [errorMsg, setErrorMsg] = React.useState("");
+  const [mobileNumber, setMobileNumber] = React.useState("");
 
   return (
     <AppContext.Provider
@@ -17,6 +18,8 @@ const AppProvider = ({ children }) => {
         setNavPage,
         errorMsg,
         setErrorMsg,
+        mobileNumber,
+        setMobileNumber,
       }}
     >
       {children}
