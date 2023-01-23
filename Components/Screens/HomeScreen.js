@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Platform, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  StatusBar,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 
 import SearchInput from "../Input/SearchInput";
@@ -54,7 +61,11 @@ const HomeScreen = () => {
           </Text>
         </View> */}
         <View style={styles.modalContainer}>
-          <SearchInput placeholder={"Where are you going?"} />
+          {/* <SearchInput placeholder={"Where are you going?"} /> */}
+          <TouchableOpacity style={styles.btn}>
+            <Text>{APP_ICON.SEARCH}</Text>
+            <Text style={styles.searchText}>Were are you going?</Text>
+          </TouchableOpacity>
           <View>
             {locations.map((e, i) => {
               return <SimpleList key={i} item={e} />;
@@ -117,5 +128,14 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     paddingHorizontal: 10,
     paddingBottom: 20,
+  },
+  btn: {
+    backgroundColor: "#f6f8fa",
+    borderWidth: 1,
+    borderColor: "#d5d5d5",
+    borderRadius: 10,
+    padding: 15,
+    flexDirection: "row",
+    alignItems: "center",
   },
 });

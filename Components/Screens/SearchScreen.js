@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View, Platform, StatusBar } from "react-native";
 import React from "react";
+import Nav from "../Nav/Nav";
+import { APP_ICON } from "../../Context/settings";
 
 const SearchScreen = () => {
   return (
     <View style={styles.outline}>
-      <Text>SearchScreen</Text>
+      <Nav icon1={APP_ICON.ARROW} />
     </View>
   );
 };
