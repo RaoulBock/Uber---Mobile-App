@@ -30,13 +30,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#eee",
     padding: 10,
     borderRadius: 10,
-    width: "100%",
+    width: "90%",
   },
   grid: {
     flexDirection: "row",
     alignItems: "center",
   },
   btn: {
-    marginRight: 20,
+    marginHorizontal: 10,
   },
 });
