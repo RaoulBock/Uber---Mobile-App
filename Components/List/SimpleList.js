@@ -4,7 +4,7 @@ import { APP_ICON, APP_PAGES } from "../../Context/settings";
 import { AppContext } from "../../Context/AppContext";
 
 const SimpleList = ({ item }) => {
-  const { setSpecLocation } = React.useContext(AppContext);
+  const { setSpecLocation, setNavPage } = React.useContext(AppContext);
 
   return (
     <TouchableOpacity

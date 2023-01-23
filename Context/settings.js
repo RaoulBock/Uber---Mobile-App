@@ -34,4 +34,16 @@ export const APP_ICON = {
       style={{ color: "#3071f5", fontSize: 28 }}
     />
   ),
+  MESSAGE: (
+    <Ionicons
+      name={"ios-chatbox-outline"}
+      style={{ color: "#3071f5", fontSize: 28 }}
+    />
+  ),
+  CALL: (
+    <Ionicons
+      name={"ios-call-outline"}
+      style={{ color: "#3071f5", fontSize: 28 }}
+    />
+  ),
 };
