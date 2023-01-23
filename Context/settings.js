@@ -6,6 +6,7 @@ export const APP_PAGES = {
     SPEC: "SPEC",
     SEARCH: "SEARCH",
     CHAT: "CHAT",
+    CALL: "CALL",
   },
 };
 

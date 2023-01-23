@@ -1,5 +1,6 @@
 import React from "react";
 import { StatusBar } from "react-native";
+import CallScreen from "./Components/Screens/CallScreen";
 import ChatScreen from "./Components/Screens/ChatScreen";
 import HomeScreen from "./Components/Screens/HomeScreen";
 import LoginScreen from "./Components/Screens/LoginScreen";
@@ -43,6 +44,7 @@ const NavWrapper = () => {
       {navPage === APP_PAGES.APP.SPEC && <SpecScreen />}
       {navPage === APP_PAGES.APP.SEARCH && <SearchScreen />}
       {navPage === APP_PAGES.APP.CHAT && <ChatScreen />}
+      {navPage === APP_PAGES.APP.CALL && <CallScreen />}
     </>
   );
 };
