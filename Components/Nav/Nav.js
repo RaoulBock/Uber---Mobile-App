@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   btn: {
-    backgroundColor: "#3071f5",
+    backgroundColor: "#eee",
     borderRadius: 50,
     width: 40,
     height: 40,

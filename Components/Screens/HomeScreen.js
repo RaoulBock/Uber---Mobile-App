@@ -11,11 +11,13 @@ import React from "react";
 import SearchInput from "../Input/SearchInput";
 
 import ViewMap from "../Views/ViewMap";
-import { APP_ICON } from "../../Context/settings";
+import { APP_ICON, APP_PAGES } from "../../Context/settings";
 import SimpleList from "../List/SimpleList";
+import { AppContext } from "../../Context/AppContext";
 
 const HomeScreen = () => {
   //   const [toggleModel, setToggleModel] = React.useState(false);
+  const { setNavPage } = React.useContext(AppContext);
 
   const [isVisible, setIsVisible] = React.useState(false);
 
@@ -62,9 +64,12 @@ const HomeScreen = () => {
         </View> */}
         <View style={styles.modalContainer}>
           {/* <SearchInput placeholder={"Where are you going?"} /> */}
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => setNavPage(APP_PAGES.APP.SEARCH)}
+          >
             <Text>{APP_ICON.SEARCH}</Text>
-            <Text style={styles.searchText}>Were are you going?</Text>
+            <Text style={styles.searchText}>Where are you going?</Text>
           </TouchableOpacity>
           <View>
             {locations.map((e, i) => {
@@ -137,5 +142,10 @@ const styles = StyleSheet.create({
     padding: 15,
     flexDirection: "row",
     alignItems: "center",
+  },
+  searchText: {
+    fontWeight: "500",
+    color: "#404040",
+    paddingHorizontal: 10,
   },
 });

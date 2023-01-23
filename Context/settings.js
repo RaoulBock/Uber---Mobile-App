@@ -53,4 +53,10 @@ export const APP_ICON = {
       style={{ color: "#3071f5", fontSize: 28 }}
     />
   ),
+  BACK: (
+    <Ionicons
+      name={"ios-chevron-back-outline"}
+      style={{ color: "#3071f5", fontSize: 28 }}
+    />
+  ),
 };
