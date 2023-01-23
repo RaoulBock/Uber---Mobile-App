@@ -2,6 +2,7 @@ import React from "react";
 import { StatusBar } from "react-native";
 import HomeScreen from "./Components/Screens/HomeScreen";
 import LoginScreen from "./Components/Screens/LoginScreen";
+import SearchScreen from "./Components/Screens/SearchScreen";
 import SpecScreen from "./Components/Screens/SpecScreen";
 import VerifyScreen from "./Components/Screens/VerifyScreen";
 import AppProvider, { AppContext } from "./Context/AppContext";
@@ -39,6 +40,7 @@ const NavWrapper = () => {
       {navPage === APP_PAGES.APP.VERIFY && <VerifyScreen />}
       {navPage === APP_PAGES.APP.HOME && <HomeScreen />}
       {navPage === APP_PAGES.APP.SPEC && <SpecScreen />}
+      {navPage === APP_PAGES.APP.SEARCH && <SearchScreen />}
     </>
   );
 };

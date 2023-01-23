@@ -4,6 +4,7 @@ export const APP_PAGES = {
     VERIFY: "VERIFY",
     HOME: "HOME",
     SPEC: "SPEC",
+    SEARCH: "SEARCH",
   },
 };
 
