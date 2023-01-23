@@ -7,12 +7,16 @@ import {
   TextInput,
 } from "react-native";
 import React from "react";
+import Button from "../Button/Button";
+import { AppContext } from "../../Context/AppContext";
 
 const VerifyScreen = () => {
-  const [input1, setInput1] = React.useState("");
-  const [input2, setInput2] = React.useState("");
-  const [input3, setInput3] = React.useState("");
-  const [input4, setInput4] = React.useState("");
+  const { errorMsg, mobileNumber } = React.useContext(AppContext);
+
+  const [input1, setInput1] = React.useState();
+  const [input2, setInput2] = React.useState();
+  const [input3, setInput3] = React.useState();
+  const [input4, setInput4] = React.useState();
 
   const handleInput1 = (text) => {
     setInput1(text);
@@ -42,30 +46,51 @@ const VerifyScreen = () => {
 
   return (
     <View style={styles.outline}>
-      <TextInput
-        ref={input1Ref}
-        value={input1}
-        onChangeText={handleInput1}
-        maxLength={1}
-      />
-      <TextInput
-        ref={input2Ref}
-        value={input2}
-        onChangeText={handleInput2}
-        maxLength={1}
-      />
-      <TextInput
-        ref={input3Ref}
-        value={input3}
-        onChangeText={handleInput3}
-        maxLength={1}
-      />
-      <TextInput
-        ref={input4Ref}
-        value={input4}
-        onChangeText={setInput4}
-        maxLength={1}
-      />
+      {/* <LoginNav /> */}
+      <Text style={styles.title}>Enter code sent to your number</Text>
+      <Text style={styles.text}>
+        We sent it to the number +264 {mobileNumber}.
+      </Text>
+      <View style={styles.inputOutline}>
+        <TextInput
+          ref={input1Ref}
+          value={input1}
+          onChangeText={handleInput1}
+          maxLength={1}
+          style={styles.input}
+          keyboardType={"numeric"}
+        />
+        <TextInput
+          ref={input2Ref}
+          value={input2}
+          onChangeText={handleInput2}
+          maxLength={1}
+          style={styles.input}
+          keyboardType={"numeric"}
+        />
+        <TextInput
+          ref={input3Ref}
+          value={input3}
+          onChangeText={handleInput3}
+          maxLength={1}
+          style={styles.input}
+          keyboardType={"numeric"}
+        />
+        <TextInput
+          ref={input4Ref}
+          value={input4}
+          onChangeText={setInput4}
+          maxLength={1}
+          style={styles.input}
+          keyboardType={"numeric"}
+        />
+      </View>
+      {input4 && (
+        <View style={{ marginVertical: 20 }}>
+          <Button title={"Next"} />
+        </View>
+      )}
+      <Text style={styles.error}>{errorMsg}</Text>
     </View>
   );
 };
@@ -77,5 +102,28 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     margin: 20,
+  },
+  input: {
+    width: 60,
+    height: 40,
+    borderBottomWidth: 1,
+    borderBottomColor: "gray",
+    textAlign: "center",
+    fontSize: 28,
+    color: "#404040",
+  },
+  title: {
+    color: "#333",
+    fontWeight: "500",
+    fontSize: 38,
+  },
+  text: {
+    marginVertical: 15,
+    color: "gray",
+  },
+  inputOutline: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });
