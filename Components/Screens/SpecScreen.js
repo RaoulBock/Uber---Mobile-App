@@ -1,7 +1,15 @@
-import { StyleSheet, Text, View, Platform, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  StatusBar,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import ViewMap from "../Views/ViewMap";
 import SpecList from "../List/SpecList";
+import { APP_ICON } from "../../Context/settings";
 
 const SpecScreen = () => {
   const driver = [
@@ -70,5 +78,14 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     paddingVertical: 10,
     textAlign: "center",
+  },
+  btn: {},
+  btnOutline: {
+    position: "absolute",
+    top: 20,
+    left: 20,
+    zIndex: 10,
+    fontSize: 20,
+    backgroundColor: "red",
   },
 });

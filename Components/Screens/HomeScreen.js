@@ -11,7 +11,7 @@ import React from "react";
 import SearchInput from "../Input/SearchInput";
 
 import ViewMap from "../Views/ViewMap";
-import { APP_ICON, APP_PAGES } from "../../Context/settings";
+import { APP_ICON, APP_PAGES, LOCATION_DATA } from "../../Context/settings";
 import SimpleList from "../List/SimpleList";
 import { AppContext } from "../../Context/AppContext";
 
@@ -24,27 +24,6 @@ const HomeScreen = () => {
   const toggleModal = () => {
     setIsVisible(!isVisible);
   };
-
-  const locations = [
-    {
-      id: 1,
-      name: "Work",
-      location: "3043 B Street, 92102",
-      icon: APP_ICON.BRIEFCASE,
-    },
-    {
-      id: 2,
-      name: "El Dorado Bar",
-      location: "3043 B Street, 7894",
-      icon: APP_ICON.LOCATION,
-    },
-    {
-      id: 3,
-      name: "El Dorado Bar",
-      location: "3043 B Street, 7894",
-      icon: APP_ICON.LOCATION,
-    },
-  ];
 
   return (
     <View style={styles.outline}>
@@ -72,7 +51,7 @@ const HomeScreen = () => {
             <Text style={styles.searchText}>Where are you going?</Text>
           </TouchableOpacity>
           <View>
-            {locations.map((e, i) => {
+            {LOCATION_DATA.map((e, i) => {
               return <SimpleList key={i} item={e} />;
             })}
           </View>

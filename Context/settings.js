@@ -60,3 +60,24 @@ export const APP_ICON = {
     />
   ),
 };
+
+export const LOCATION_DATA = [
+  {
+    id: 1,
+    name: "Work",
+    location: "3043 B Street, 92102",
+    icon: APP_ICON.BRIEFCASE,
+  },
+  {
+    id: 2,
+    name: "El Dorado Bar",
+    location: "3043 B Street, 7894",
+    icon: APP_ICON.LOCATION,
+  },
+  {
+    id: 3,
+    name: "El Dorado Bar",
+    location: "3043 B Street, 7894",
+    icon: APP_ICON.LOCATION,
+  },
+];
