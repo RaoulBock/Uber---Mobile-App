@@ -27,4 +27,10 @@ export const APP_ICON = {
       style={{ color: "#3071f5", fontSize: 28 }}
     />
   ),
+  ARROW: (
+    <Ionicons
+      name={"ios-chevron-forward-outline"}
+      style={{ color: "#3071f5", fontSize: 28 }}
+    />
+  ),
 };

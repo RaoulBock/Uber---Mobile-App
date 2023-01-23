@@ -29,6 +29,12 @@ const HomeScreen = () => {
       location: "3043 B Street, 7894",
       icon: APP_ICON.LOCATION,
     },
+    {
+      id: 3,
+      name: "El Dorado Bar",
+      location: "3043 B Street, 7894",
+      icon: APP_ICON.LOCATION,
+    },
   ];
 
   return (
