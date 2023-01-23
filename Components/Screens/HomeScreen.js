@@ -24,13 +24,6 @@ const HomeScreen = () => {
     setIsVisible(!isVisible);
   };
 
-  const [mapRegion, setmapRegion] = React.useState({
-    latitude: 37.78825,
-    longitude: -122.4324,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
-  });
-
   return (
     <View style={styles.outline}>
       {/* <Nav
@@ -38,14 +31,19 @@ const HomeScreen = () => {
         title={"Uber"}
         onPress={() => setIsVisible(!isVisible)}
       /> */}
-      <MapView
-        style={{ alignSelf: "stretch", height: "50%" }}
-        region={mapRegion}
-      >
-        <Marker coordinate={mapRegion} title="Marker" />
-      </MapView>
+      <ViewMap />
 
-      <Modal
+      <View style={styles.modal}>
+        <Text style={styles.title}>Enhance your pick-up experience</Text>
+        <Text style={styles.text}>
+          Get a faster, hasstle free pick-up at your precise location
+        </Text>
+        <View style={styles.modalContainer}>
+          <Text>hi</Text>
+        </View>
+      </View>
+
+      {/* <Modal
         animationType="slide"
         transparent={false}
         visible={isVisible}
@@ -59,7 +57,7 @@ const HomeScreen = () => {
             <Text>Close Modal</Text>
           </TouchableOpacity>
         </View>
-      </Modal>
+      </Modal> */}
     </View>
   );
 };
@@ -86,5 +84,34 @@ const styles = StyleSheet.create({
     width: "100%",
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
+  },
+  modal: {
+    backgroundColor: "#3071f5",
+
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+  },
+  modalContainer: {
+    backgroundColor: "#fff",
+    padding: 15,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+
+    width: "100%",
+  },
+  title: {
+    fontWeight: "400",
+    color: "white",
+    fontSize: 28,
+    padding: 15,
+  },
+  text: {
+    color: "#eee",
+    fontWeight: "400",
+    paddingHorizontal: 10,
+    paddingBottom: 20,
   },
 });
