@@ -17,6 +17,7 @@ const LoginScreen = () => {
 
   if (number === "") {
     setErrorMsg("Please provide your mobile number to continue.");
+  } else {
   }
 
   return (
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
   inputOutline: {
     flexDirection: "row",
     alignItems: "center",
-    marginVertical: 20,
+    marginVertical: 15,
   },
   input: {
     marginHorizontal: 10,
