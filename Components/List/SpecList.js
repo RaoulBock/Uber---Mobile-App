@@ -1,10 +1,10 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { APP_ICON } from "../../Context/settings";
+import { APP_ICON, APP_PAGES } from "../../Context/settings";
 import { AppContext } from "../../Context/AppContext";
 
 const SpecList = ({ item }) => {
-  const { setSpecDriver } = React.useContext(AppContext);
+  const { setSpecDriver, setNavPage } = React.useContext(AppContext);
   return (
     <View style={styles.outline}>
       <View style={[styles.grid, { justifyContent: "space-between" }]}>
@@ -14,6 +14,7 @@ const SpecList = ({ item }) => {
             style={{ marginHorizontal: 20 }}
             onPress={() => {
               setSpecDriver(item);
+              setNavPage(APP_PAGES.APP.CHAT);
             }}
           >
             <Text>{APP_ICON.MESSAGE}</Text>
