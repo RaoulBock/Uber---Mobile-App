@@ -15,4 +15,16 @@ export const APP_ICON = {
       style={{ color: "#fff", fontSize: 28 }}
     />
   ),
+  BRIEFCASE: (
+    <Ionicons
+      name={"ios-briefcase-outline"}
+      style={{ color: "#3071f5", fontSize: 28 }}
+    />
+  ),
+  LOCATION: (
+    <Ionicons
+      name={"ios-location-outline"}
+      style={{ color: "#3071f5", fontSize: 28 }}
+    />
+  ),
 };

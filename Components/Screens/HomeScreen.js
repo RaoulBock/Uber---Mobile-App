@@ -1,19 +1,11 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Platform,
-  StatusBar,
-  Modal,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View, Platform, StatusBar } from "react-native";
 import React from "react";
-import Nav from "../Nav/Nav";
-import { APP_ICON } from "../../Context/settings";
+
 import SearchInput from "../Input/SearchInput";
 
-import MapView, { Marker } from "react-native-maps";
 import ViewMap from "../Views/ViewMap";
+import { APP_ICON } from "../../Context/settings";
+import SimpleList from "../List/SimpleList";
 
 const HomeScreen = () => {
   //   const [toggleModel, setToggleModel] = React.useState(false);
@@ -23,6 +15,21 @@ const HomeScreen = () => {
   const toggleModal = () => {
     setIsVisible(!isVisible);
   };
+
+  const locations = [
+    {
+      id: 1,
+      name: "Work",
+      location: "3043 B Street, 92102",
+      icon: APP_ICON.BRIEFCASE,
+    },
+    {
+      id: 2,
+      name: "El Dorado Bar",
+      location: "3043 B Street, 7894",
+      icon: APP_ICON.LOCATION,
+    },
+  ];
 
   return (
     <View style={styles.outline}>
@@ -39,7 +46,12 @@ const HomeScreen = () => {
           Get a faster, hasstle free pick-up at your precise location
         </Text>
         <View style={styles.modalContainer}>
-          <Text>hi</Text>
+          <SearchInput placeholder={"Where are you going?"} />
+          <View>
+            {locations.map((e, i) => {
+              return <SimpleList key={i} item={e} />;
+            })}
+          </View>
         </View>
       </View>
 
