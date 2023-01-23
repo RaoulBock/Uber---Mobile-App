@@ -5,3 +5,14 @@ export const APP_PAGES = {
     HOME: "HOME",
   },
 };
+
+import { Ionicons } from "react-native-vector-icons";
+
+export const APP_ICON = {
+  horizontal: (
+    <Ionicons
+      name={"ios-ellipsis-horizontal-sharp"}
+      style={{ color: "#fff", fontSize: 28 }}
+    />
+  ),
+};
