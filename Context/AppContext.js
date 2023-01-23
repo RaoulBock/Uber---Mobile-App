@@ -12,6 +12,7 @@ const AppProvider = ({ children }) => {
   const [errorMsg, setErrorMsg] = React.useState("");
   const [mobileNumber, setMobileNumber] = React.useState("");
   const [location, setLocation] = React.useState(null);
+  const [specLocation, setSpecLocation] = React.useState();
 
   React.useEffect(() => {
     (async () => {
@@ -46,6 +47,8 @@ const AppProvider = ({ children }) => {
         setMobileNumber,
         location,
         setLocation,
+        specLocation,
+        setSpecLocation,
       }}
     >
       {children}

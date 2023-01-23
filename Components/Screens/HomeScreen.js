@@ -47,10 +47,12 @@ const HomeScreen = () => {
       <ViewMap />
 
       <View style={styles.modal}>
-        <Text style={styles.title}>Enhance your pick-up experience</Text>
-        <Text style={styles.text}>
-          Get a faster, hasstle free pick-up at your precise location
-        </Text>
+        {/* <View>
+          <Text style={styles.title}>Enhance your pick-up experience</Text>
+          <Text style={styles.text}>
+            Get a faster, hasstle free pick-up at your precise location
+          </Text>
+        </View> */}
         <View style={styles.modalContainer}>
           <SearchInput placeholder={"Where are you going?"} />
           <View>
@@ -60,22 +62,6 @@ const HomeScreen = () => {
           </View>
         </View>
       </View>
-
-      {/* <Modal
-        animationType="slide"
-        transparent={false}
-        visible={isVisible}
-        onRequestClose={toggleModal}
-      >
-        <TouchableOpacity style={styles.overlay} onPress={toggleModal} />
-        <View style={styles.modalInfo}>
-          <SearchInput placeholder={"Where are you going?"} />
-          <Text>Hello World</Text>
-          <TouchableOpacity onPress={toggleModal}>
-            <Text>Close Modal</Text>
-          </TouchableOpacity>
-        </View>
-      </Modal> */}
     </View>
   );
 };

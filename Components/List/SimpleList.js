@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { APP_ICON } from "../../Context/settings";
 
 const SimpleList = ({ item }) => {
   return (
-    <View style={styles.outline}>
+    <TouchableOpacity style={styles.outline} activeOpacity={1}>
       <View style={styles.grid}>
         <Text style={styles.btn}>{item.icon}</Text>
         <View style={{ paddingHorizontal: 10 }}>
@@ -20,7 +20,7 @@ const SimpleList = ({ item }) => {
         </View>
       </View>
       <Text>{APP_ICON.ARROW}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
